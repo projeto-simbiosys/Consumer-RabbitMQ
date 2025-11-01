@@ -1,0 +1,24 @@
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: projetosimbiosys@gmail.com
+    password: urubu100
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+app:
+  queue:
+    name: relatorioQueue
+  destinatario:
+    email: matheusferrotorres@gmail.com
