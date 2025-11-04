@@ -12,16 +12,20 @@ spring:
     host: smtp.gmail.com
     port: 587
     username: projetosimbiosys@gmail.com
-    password: urubu100
+    password: smxbmfhprfwfxsoz
     properties:
       mail:
         smtp:
           auth: true
           starttls:
             enable: true
+        transport:
+          protocol: smtp
+        debug: true
 
 app:
   queue:
     name: relatorioQueue
   destinatario:
     email: matheusferrotorres@gmail.com
+
