@@ -1,6 +1,9 @@
 spring:
   application:
     name: simbiosys-consumer
+  docker:
+    compose:
+      enabled: false
 
   rabbitmq:
     host: localhost
@@ -29,3 +32,5 @@ app:
   destinatario:
     email: matheusferrotorres@gmail.com
 
+server:
+  port: 8082
