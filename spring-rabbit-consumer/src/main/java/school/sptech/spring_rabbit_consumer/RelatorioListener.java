@@ -16,7 +16,6 @@ public class RelatorioListener {
     @Value("${app.destinatario.email}")
     private String emailDestinatario;
 
-    // O Spring já converte JSON em RelatorioDto automaticamente
     @RabbitListener(queues = "${app.queue.name}")
     public void receberMensagem(RelatorioDto relatorio) {
         System.out.println("📨 Mensagem recebida: " + relatorio);
@@ -25,6 +24,7 @@ public class RelatorioListener {
 
     private void enviarEmailFormatado(RelatorioDto relatorio) {
         SimpleMailMessage email = new SimpleMailMessage();
+        email.setFrom("projetosimbiosys@gmail.com"); // 🔥 Necessário para evitar erro de remetente
         email.setTo(emailDestinatario);
         email.setSubject("Novo relatório criado");
 
@@ -50,6 +50,7 @@ public class RelatorioListener {
         System.out.println("📧 E-mail enviado para " + emailDestinatario);
     }
 }
+
 
 
 
